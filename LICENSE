@@ -26,10 +26,13 @@ in section 1. Viewing or downloading a file does not grant any additional right.
       extent applicable law expressly allows despite this restriction.
    You may keep one backup copy of the released application for your own use.
 
-3. SOURCE ACCESS
-   If the source code is visible to you, it is only because the project owner
-   has invited you. You may use it solely to review its safety and correctness.
-   Do not share it, or any excerpt, with anyone else.
+3. SOURCE CODE (VIEW AND VERIFY ONLY)
+   The source code in the "src" folder is published so that anyone can read it,
+   check its safety and correctness, and build it with build.cmd and run its --self-test
+   to check it. Publishing it does not make it
+   open source: apart from reading and building it for that purpose, section 2
+   applies to the source code in full. Do not share it, or any excerpt, or use
+   it in another project.
 
 4. THIRD-PARTY FILES
    No Logitech updater, firmware or branding is included. The software
@@ -53,7 +56,9 @@ KENDİ arızalı ve eşleşen ilk nesil PRO X Wireless alıcınızı kurtarmak i
 kişisel ve ticari olmayan amaçla ücretsiz kullanabilirsiniz. Kaynak kodu, yama
 tanımlarını veya belgeleri kopyalayamaz, paylaşamaz, değiştiremez, başka
 projede kullanamaz ve başka cihaz veya yazılımları yamalamak için
-kullanamazsınız. Kaynak kod size yalnızca proje sahibinin daveti nedeniyle
-görünüyorsa, onu yalnızca güvenlik ve doğruluk incelemesi için kullanabilir ve
-kimseyle paylaşamazsınız. Yazılım "olduğu gibi" sunulur; firmware yazımı riskli
+kullanamazsınız. "src" klasöründeki kaynak kod herkesin okuyup
+güvenlik ve doğruluğunu inceleyebilmesi ve build.cmd ile derleyip --self-test ile
+deneyebilmesi için yayımlanmıştır; bu, onu açık kaynak
+yapmaz. Bu amaçla okumanın ve derlemenin dışında yukarıdaki kısıtlar kaynak
+kodun tamamı için geçerlidir; kimseyle paylaşamaz, başka projede kullanamazsınız. Yazılım "olduğu gibi" sunulur; firmware yazımı riskli
 olup cihazı kalıcı olarak kullanılamaz bırakabilir. Logitech ile bağlantı yoktur.

@@ -26,7 +26,7 @@ Dosyayı açmadan önce, indirdiğiniz dosyayı PowerShell'de doğrulayın:
 Get-FileHash .\ReceiverRescue-0.4.2.zip -Algorithm SHA256
 ```
 
-Program dijital olarak imzalı olmadığından Windows SmartScreen veya antivirüs yazılımınız uyarı gösterebilir; Windows 11 Akıllı Uygulama Denetimi açıksa programı engelleyebilir. Bu araç için Windows güvenlik özelliklerini kapatmayın. Bu depo yalnızca hazır indirme dosyasını ve belgelerini içerir; kaynak kodu içermez. Bu yazılım tescillidir ve açık kaynak değildir: bkz. [LICENSE](LICENSE).
+Program dijital olarak imzalı olmadığından Windows SmartScreen veya antivirüs yazılımınız uyarı gösterebilir; Windows 11 Akıllı Uygulama Denetimi açıksa programı engelleyebilir. Bu araç için Windows güvenlik özelliklerini kapatmayın. Kaynak kod `src` klasöründedir; okuyabilir ve `build.cmd` ile (Windows ve .NET Framework 4.8 yeterlidir, ek araç gerekmez) kendiniz derleyip `--self-test` ile deneyebilirsiniz. Bu yazılım tescillidir ve açık kaynak değildir: kaynak yalnızca inceleme ve doğrulama içindir, bkz. [LICENSE](LICENSE).
 
 ## Kullanım
 
@@ -63,7 +63,7 @@ Başka alıcılardan gelen sonuçlar bu proje için en değerli veridir. Lütfen
 
 ## Paket içeriği ve lisans
 
-Bu paket kaynak kodu veya derleme betiği içermez. `manifests` klasörü, programın çalışması için gerekli yama tanımlarını içerir. Logitech güncelleyici EXE'si ve firmware verisi pakete dahil değildir; orijinal dosya, kullanıcının bilgisayarında indirilip doğrulanır ve yama yerel olarak uygulanır. Yamalanan EXE dijital olarak imzalı değildir; başlatıcı da dijital olarak imzalı değildir.
+`src` klasöründeki kaynak yalnızca inceleme ve doğrulama içindir. `manifests` klasörü, programın çalışması için gerekli yama tanımlarını içerir. Logitech güncelleyici EXE'si ve firmware verisi pakete dahil değildir; orijinal dosya, kullanıcının bilgisayarında indirilip doğrulanır ve yama yerel olarak uygulanır. Yamalanan EXE dijital olarak imzalı değildir; başlatıcı da dijital olarak imzalı değildir.
 
 Yerel dosyalar `%LOCALAPPDATA%\ReceiverRescue\112.2.212` klasöründe tutulur. Program veri yüklemez. Windows 10/11 ve .NET Framework 4.8 gerekir; Logitech, orijinal güncelleyiciyi Windows 11 için listelemektedir.
 

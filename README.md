@@ -26,7 +26,7 @@ Verify your download in PowerShell before opening it:
 Get-FileHash .\ReceiverRescue-0.4.2.zip -Algorithm SHA256
 ```
 
-The program is not digitally signed, so Windows SmartScreen or your antivirus may show a warning, and Windows 11 Smart App Control, where it is switched on, can block it. Do not switch off Windows security features for this tool. This repository contains only the finished download and its documentation; it does not contain source code. This is proprietary software, not open source: see [LICENSE](LICENSE).
+The program is not digitally signed, so Windows SmartScreen or your antivirus may show a warning, and Windows 11 Smart App Control, where it is switched on, can block it. Do not switch off Windows security features for this tool. The source code is in `src` so you can read it and build it yourself with `build.cmd` (Windows with .NET Framework 4.8, no extra tools) to run its `--self-test`. This is proprietary software, not open source: the source is for review and verification only, see [LICENSE](LICENSE).
 
 ## Run
 
@@ -53,7 +53,7 @@ Recovery always writes receiver firmware 2.12 and skips the updater's version ch
 
 This does not update headset/MCU firmware, back up installed firmware or repair charging disconnects. Interrupted or incorrect firmware transfer can leave a receiver unusable. Use only with an already-failed matching receiver.
 
-This distribution includes no source code or build script. The runtime `manifests` folder contains required patch definitions. No Logitech updater binary or firmware payload is bundled. The original is downloaded and verified on the user's PC and patched locally. Both the community launcher and the patched updater are unsigned. This software is proprietary and not open source (see `LICENSE`): use it only to recover your own matching receiver; do not copy, modify or redistribute it or its patch definitions. Logitech files retain their original terms. This project is not affiliated with Logitech.
+The source in `src` is published for review and verification only. The `manifests` folder contains required patch definitions. No Logitech updater binary or firmware payload is bundled. The original is downloaded and verified on the user's PC and patched locally. Both the community launcher and the patched updater are unsigned. This software is proprietary and not open source (see `LICENSE`): use it only to recover your own matching receiver; do not copy, modify or redistribute it or its patch definitions. Logitech files retain their original terms. This project is not affiliated with Logitech.
 
 Downloaded/prepared files live in `%LOCALAPPDATA%\ReceiverRescue\112.2.212`. The launcher uploads no data.
 

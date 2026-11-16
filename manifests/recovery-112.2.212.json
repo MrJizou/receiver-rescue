@@ -1,0 +1,63 @@
+{
+  "purpose": "Experimental dongle bootloader recovery. Writes firmware. No headset/MCU update or pairing.",
+  "sourceSHA256": "e0e0a4e31e7d67c090e293ef600e1ab2df4f993914ff15b7a1a2e21d4dccd36d",
+  "outputSHA256": "7522c65eb9bd30f38e3300cff015c5b8dd43b98356cfb102ac55477668337e85",
+  "resourcesIdentical": true,
+  "removedRelocations": 3,
+  "changes": [
+    {
+      "va": "0x411890",
+      "label": "Recognize only already detected Avnera dongle bootloader; never fake device presence",
+      "before": "558bec83ec14894df80fb605e46b600085c075488b4df881c1ec010000e84ee500000fb6c885c974338b4df881c180020000e839e500000fb6d085d2741e8b4df881c158010000e824e500000fb6c085c07409c745f401000000eb07c745f4000000008a4df4884dff0fb615506c600085d2750b0fb605e46b600085c0745d8b4df881c1ec010000e8e3e400000fb6c885c975158b4df881c114030000e8cee400000fb6d085d274338b4df881c180020000e8b9e400000fb6c085c075158b4df881c1a8030000e8a4e400000fb6c885c97409c745f001000000eb07c745f0000000008a55f08855fe0fb645ff85c075110fb64dfe85c97509c745ec00000000eb07c745ec010000000fb645ec8be55dc3",
+      "after": "81c1a8030000e965e5000090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090909090"
+    },
+    {
+      "va": "0x412fb0",
+      "label": "Recovery requires transfer; bypass only version-query gate",
+      "before": "558bec",
+      "after": "31c0c3"
+    },
+    {
+      "va": "0x40ecea",
+      "label": "After queue construction, enter existing dongle bootloader transfer state 9 directly",
+      "before": "04000000",
+      "after": "09000000"
+    },
+    {
+      "va": "0x412127",
+      "label": "Exclude headset packets from total progress",
+      "before": "7514",
+      "after": "eb14"
+    },
+    {
+      "va": "0x412165",
+      "label": "Exclude MCU packets from total progress",
+      "before": "7514",
+      "after": "eb14"
+    },
+    {
+      "va": "0x40ee3d",
+      "label": "Skip MCU update after dongle returns in normal mode",
+      "before": "7567",
+      "after": "eb67"
+    },
+    {
+      "va": "0x40eea9",
+      "label": "Finish after dongle normal-mode return; do not generate or write pairing IDs",
+      "before": "0e000000",
+      "after": "10000000"
+    },
+    {
+      "va": "0x4113b0",
+      "label": "Disable headset bootloader entry",
+      "before": "558bec",
+      "after": "31c0c3"
+    },
+    {
+      "va": "0x411570",
+      "label": "Disable MCU firmware entry",
+      "before": "558bec",
+      "after": "31c0c3"
+    }
+  ]
+}
