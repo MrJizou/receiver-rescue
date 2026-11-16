@@ -1,0 +1,59 @@
+Receiver Rescue - Proprietary License (NOT open source)
+Receiver Rescue - Tescilli Lisans (açık kaynak DEĞİLDİR)
+
+Copyright (c) 2026 the Receiver Rescue project owner. All rights reserved.
+
+This software is NOT released under an open-source license. Nothing in this
+repository, release or documentation grants you any right except those listed
+in section 1. Viewing or downloading a file does not grant any additional right.
+
+1. PERMITTED USE
+   You may use the officially released, unmodified Receiver Rescue application,
+   free of charge, for personal, non-commercial recovery of YOUR OWN already
+   failed, matching first-generation Logitech PRO X Wireless receiver.
+
+2. RESTRICTIONS
+   Unless the project owner gives you written permission, you may NOT:
+   a) copy, publish, upload, mirror, redistribute, sublicense, sell or rent the
+      application, its source code, patch manifests or documentation;
+   b) modify the software or create derivative works, or fork or reuse any part
+      of the source code or patch definitions in another project;
+   c) use the software, source code or patch definitions to patch, modify,
+      flash or analyse any other device, firmware, updater or software;
+   d) use the software for any commercial service, or on devices you do not own;
+   e) remove or alter copyright, license or safety notices;
+   f) reverse engineer, decompile or disassemble the software, except to the
+      extent applicable law expressly allows despite this restriction.
+   You may keep one backup copy of the released application for your own use.
+
+3. SOURCE ACCESS
+   If the source code is visible to you, it is only because the project owner
+   has invited you. You may use it solely to review its safety and correctness.
+   Do not share it, or any excerpt, with anyone else.
+
+4. THIRD-PARTY FILES
+   No Logitech updater, firmware or branding is included. The software
+   downloads Logitech's official updater to your own computer; that file stays
+   subject to Logitech's own terms, which this license does not change. This
+   project is not affiliated with, endorsed by, or published by Logitech.
+
+5. NO WARRANTY, LIMIT OF LIABILITY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED. WRITING FIRMWARE IS RISKY AND CAN LEAVE A DEVICE PERMANENTLY
+   UNUSABLE. TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE PROJECT OWNER IS NOT
+   LIABLE FOR ANY CLAIM, DAMAGE OR LOSS ARISING FROM THE SOFTWARE OR ITS USE.
+
+6. TERMINATION
+   Your rights end automatically if you breach this license. Then you must stop
+   using the software and delete all copies you hold.
+
+--- Türkçe özet (bağlayıcı metin yukarıdaki İngilizce metindir) ---
+Bu yazılım açık kaynak değildir. Yalnızca resmî, değiştirilmemiş uygulamayı,
+KENDİ arızalı ve eşleşen ilk nesil PRO X Wireless alıcınızı kurtarmak için,
+kişisel ve ticari olmayan amaçla ücretsiz kullanabilirsiniz. Kaynak kodu, yama
+tanımlarını veya belgeleri kopyalayamaz, paylaşamaz, değiştiremez, başka
+projede kullanamaz ve başka cihaz veya yazılımları yamalamak için
+kullanamazsınız. Kaynak kod size yalnızca proje sahibinin daveti nedeniyle
+görünüyorsa, onu yalnızca güvenlik ve doğruluk incelemesi için kullanabilir ve
+kimseyle paylaşamazsınız. Yazılım "olduğu gibi" sunulur; firmware yazımı riskli
+olup cihazı kalıcı olarak kullanılamaz bırakabilir. Logitech ile bağlantı yoktur.

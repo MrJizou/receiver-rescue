@@ -1,0 +1,42 @@
+name: Recovery report
+description: Report an attempted receiver recovery without uploading private logs or firmware
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Experimental project: one successful receiver case is documented.
+        Do not attach proprietary firmware, credentials, serial numbers or unredacted USB instance paths.
+  - type: input
+    id: model
+    attributes:
+      label: Physical headset and receiver model
+      description: AV6201 alone is not a physical model identification.
+    validations:
+      required: true
+  - type: input
+    id: usb-id
+    attributes:
+      label: USB VID/PID before and after
+      placeholder: 170D:0100 before; 046D:0ABA after
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Stage reached
+      options:
+        - Source download or hash check
+        - Detection test
+        - Receiver firmware transfer
+        - Pairing, audio or microphone test
+  - type: textarea
+    id: report
+    attributes:
+      label: Launcher report
+      description: Paste the output of the launcher's "Copy report" button. It masks your user name and profile path, but review it before posting.
+      render: text
+  - type: textarea
+    id: result
+    attributes:
+      label: Result and exact error text
+      description: Include Windows version, launcher version and whether the headset USB cable was disconnected. Redact identifiers.
+    validations:
+      required: true
