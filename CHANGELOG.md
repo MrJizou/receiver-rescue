@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.0 — 2026-11-17
+
+- Restrict application native DLL imports to System32.
+- Use a fixed-mode elevated helper and validated administrator-only Program Files staging; recheck source/output hashes and USB eligibility after UAC. Reject symlinks, unsafe ACLs and legacy elevated fallback.
+- Bound the full updater download by timeout and size.
+- Add isolated administrator security tests. Owner reported PASS; no new physical receiver recovery was performed.
+
+
 ## 0.4.2 — private launch folder
 
 - Security fix: the prepared updater is now started from a new, private folder that contains only the verified file, and the launch is refused if any other file appears beside it. Before this, it was started with administrator permission from a long-lived folder under `%LOCALAPPDATA%`, where another program running in the same account could leave a DLL that the elevated updater would load. Leftover private folders are removed.

@@ -1,4 +1,8 @@
-# Receiver Rescue 0.4.2
+# Receiver Rescue 0.5.0
+
+## 0.5.0 güvenlik güncellemesi
+
+Updater artık yönetici/SYSTEM dışındaki hesapların yazamadığı Program Files klasöründen çalıştırılır. Yönetici izninden sonra dosya hash’i, klasör izinleri/yönlendirmeleri ve hedef aygıt tekrar kontrol edilir. Başarısızlıkta eski yönteme dönülmez. Ayrı yönetici güvenlik testini proje sahibi çalıştırıp PASS bildirdi; bu sürümle gerçek firmware kurtarması yapılmadı. [Tasarım ve test sınırları](docs/PROTECTED-LAUNCH.md).
 
 İlk nesil Logitech PRO X Wireless Standart / Shroud alıcı ailesi için deneysel kurtarma başlatıcısıdır.
 
@@ -16,14 +20,14 @@ Bu araç; diğer Logitech modelleri, hâlâ çalışan alıcılar veya kulaklı�
 
 ## İndirme
 
-**[ReceiverRescue-0.4.2.zip](downloads/ReceiverRescue-0.4.2.zip)** (dosya sayfasındaki **Download raw file** düğmesini kullanın)
+**[ReceiverRescue-0.5.0.zip](downloads/ReceiverRescue-0.5.0.zip)** (dosya sayfasındaki **Download raw file** düğmesini kullanın)
 
-SHA-256: `0e72a779ce7b65d2f9f7f8a36be419947a2ab466f02b387d5a61d56bdbcbd403`
+SHA-256: `fb636bebb301446e7c7e73a9611c8802f23d478ba587d1e7ca53cf15ed9f5615`
 
 Dosyayı açmadan önce, indirdiğiniz dosyayı PowerShell'de doğrulayın:
 
 ```powershell
-Get-FileHash .\ReceiverRescue-0.4.2.zip -Algorithm SHA256
+Get-FileHash .\ReceiverRescue-0.5.0.zip -Algorithm SHA256
 ```
 
 Program dijital olarak imzalı olmadığından Windows SmartScreen veya antivirüs yazılımınız uyarı gösterebilir; Windows 11 Akıllı Uygulama Denetimi açıksa programı engelleyebilir. Bu araç için Windows güvenlik özelliklerini kapatmayın. Kaynak kod `src` klasöründedir; okuyabilir ve `build.cmd` ile (Windows ve .NET Framework 4.8 yeterlidir, ek araç gerekmez) kendiniz derleyip `--self-test` ile deneyebilirsiniz. Bu yazılım tescillidir ve açık kaynak değildir: kaynak yalnızca inceleme ve doğrulama içindir, bkz. [LICENSE](LICENSE).

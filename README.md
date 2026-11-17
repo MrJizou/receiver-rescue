@@ -1,4 +1,8 @@
-# Receiver Rescue 0.4.2
+# Receiver Rescue 0.5.0
+
+## 0.5.0 security update
+
+The updater now runs from administrator/SYSTEM-only Program Files staging. After UAC, the helper rechecks hashes, directory permissions/reparse points and device eligibility. Failure stops the launch without a legacy fallback. The owner reported PASS for the isolated administrator security test; no physical firmware recovery was performed with this version. [Design and validation limits](docs/PROTECTED-LAUNCH.md).
 
 Experimental Windows recovery launcher for first-generation Logitech PRO X Wireless Standard / Shroud receivers.
 
@@ -16,14 +20,14 @@ It is not for other Logitech models, receivers that still work, or the headset i
 
 ## Download
 
-**[ReceiverRescue-0.4.2.zip](downloads/ReceiverRescue-0.4.2.zip)** (use the **Download raw file** button on the file page)
+**[ReceiverRescue-0.5.0.zip](downloads/ReceiverRescue-0.5.0.zip)** (use the **Download raw file** button on the file page)
 
-SHA-256: `0e72a779ce7b65d2f9f7f8a36be419947a2ab466f02b387d5a61d56bdbcbd403`
+SHA-256: `fb636bebb301446e7c7e73a9611c8802f23d478ba587d1e7ca53cf15ed9f5615`
 
 Verify your download in PowerShell before opening it:
 
 ```powershell
-Get-FileHash .\ReceiverRescue-0.4.2.zip -Algorithm SHA256
+Get-FileHash .\ReceiverRescue-0.5.0.zip -Algorithm SHA256
 ```
 
 The program is not digitally signed, so Windows SmartScreen or your antivirus may show a warning, and Windows 11 Smart App Control, where it is switched on, can block it. Do not switch off Windows security features for this tool. The source code is in `src` so you can read it and build it yourself with `build.cmd` (Windows with .NET Framework 4.8, no extra tools) to run its `--self-test`. This is proprietary software, not open source: the source is for review and verification only, see [LICENSE](LICENSE).
