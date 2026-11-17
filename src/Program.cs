@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 
+// All native imports in this assembly are Windows system libraries.
+[assembly: System.Runtime.InteropServices.DefaultDllImportSearchPaths(System.Runtime.InteropServices.DllImportSearchPath.System32)]
 [assembly: AssemblyTitle("Receiver Rescue")]
 [assembly: AssemblyDescription("Community launcher and reproducible patcher for a specific PRO X Wireless receiver recovery")]
 [assembly: AssemblyVersion("0.4.2.0")]
