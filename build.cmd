@@ -8,7 +8,7 @@ if not exist "%RESCUE_CSC%" (
   exit /b 1
 )
 if not exist bin mkdir bin
-"%RESCUE_CSC%" /nologo /target:winexe /out:bin\ReceiverRescue.exe /reference:System.Windows.Forms.dll /reference:System.Drawing.dll /reference:System.Net.Http.dll /reference:System.Web.Extensions.dll /reference:System.Management.dll src\VerifiedPatcher.cs src\DeviceDiscovery.cs src\Support.cs src\RecoveryForm.cs src\Program.cs
+"%RESCUE_CSC%" /nologo /target:winexe /out:bin\ReceiverRescue.exe /reference:System.Windows.Forms.dll /reference:System.Drawing.dll /reference:System.Net.Http.dll /reference:System.Web.Extensions.dll /reference:System.Management.dll src\ProtectedLauncher.cs src\VerifiedPatcher.cs src\DeviceDiscovery.cs src\Support.cs src\RecoveryForm.cs src\Program.cs
 if errorlevel 1 exit /b 1
 if not exist bin\manifests mkdir bin\manifests
 copy /y manifests\*.json bin\manifests\ >nul
