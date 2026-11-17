@@ -11,8 +11,9 @@ using System.Windows.Forms;
 [assembly: System.Runtime.InteropServices.DefaultDllImportSearchPaths(System.Runtime.InteropServices.DllImportSearchPath.System32)]
 [assembly: AssemblyTitle("Receiver Rescue")]
 [assembly: AssemblyDescription("Community launcher and reproducible patcher for a specific PRO X Wireless receiver recovery")]
-[assembly: AssemblyVersion("0.4.2.0")]
-[assembly: AssemblyFileVersion("0.4.2.0")]
+[assembly: AssemblyVersion("0.5.0.0")]
+[assembly: AssemblyFileVersion("0.5.0.0")]
+[assembly: AssemblyInformationalVersion("0.5.0")]
 
 namespace ReceiverRescue {
  static class Program {
@@ -22,6 +23,7 @@ namespace ReceiverRescue {
   static DeviceObservation Device(string id,ushort vendor,ushort product,bool hid,bool readable,ushort page,ushort usage){return new DeviceObservation{PhysicalId=id,Vendor=vendor,Product=product,Hid=hid,CapabilitiesRead=readable,UsagePage=page,Usage=usage};}
   static DeviceObservation Boot(string id){return Device(id,0x170d,0x0100,true,true,0xff00,1);}
   static void SelfTest(){
+   ProtectedLauncher.PolicySelfTest();
    Assert(DeviceDiscovery.Classify(new[]{Boot("one")}).CanLaunch,"Matching bootloader should be eligible");
    Assert(!DeviceDiscovery.Classify(new DeviceObservation[0]).CanLaunch,"Missing receiver must be rejected");
    var normal=Device("normal",0x046d,0x0aba,false,false,0,0);var headset=Device("headset",0x046d,0x0abb,false,false,0,0);
@@ -73,6 +75,14 @@ namespace ReceiverRescue {
   [STAThread]static int Main(string[] args){
    try{Console.OutputEncoding=new UTF8Encoding(false);}catch{}
    try{
+    if(args.Length==1&&args[0]=="--protected-self-test"){
+     try{ProtectedLauncher.AdministratorSelfTest();MessageBox.Show("PASS: protected directory ACLs, directory rename lock, source/staging reparse rejection, and restricted-token DLL planting / overwrite / delete / ACL-change rejection. No USB device or firmware tool was accessed.","Receiver Rescue - administrator security test");return 0;}
+     catch(Exception e){MessageBox.Show(Support.MaskPersonal(e.ToString()),"Receiver Rescue - administrator security test FAILED",MessageBoxButtons.OK,MessageBoxIcon.Error);return 10;}
+    }
+    if(args.Length>0&&args[0]=="--protected-launch"){
+     try{if(args.Length!=3)throw new InvalidDataException("Invalid protected launcher arguments.");return ProtectedLauncher.Run(args[1],args[2]);}
+     catch(Exception e){MessageBox.Show(Support.MaskPersonal(e.Message),"Receiver Rescue - protected launch refused",MessageBoxButtons.OK,MessageBoxIcon.Error);return 10;}
+    }
     if(args.Length>0&&args[0]=="--self-test"){SelfTest();return 0;}
     if(args.Length==1&&args[0]=="--scan"){var s=DeviceDiscovery.Scan();Console.WriteLine("State: "+s.Code+"; normal receivers: "+s.NormalDevices+"; bootloader devices: "+s.BootloaderDevices+"; matching bootloader HID interfaces: "+s.BootloaderInterfaces+"; readable HID descriptors: "+s.ReadableHidInterfaces+"; headset USB devices: "+s.HeadsetDevices+"; unknown Avnera devices: "+s.UnsupportedDevices+"; PRO X Windows audio devices: "+Support.CountMatchingAudioDevices());return 0;}
     if(args.Length==3&&args[0]=="--verify-updater"){

@@ -21,6 +21,7 @@ namespace ReceiverRescue {
   // Re-verifies the file and starts it while this process holds a handle that denies writes, renames and deletes.
   // This closes the gap between the integrity check and process creation: the file cannot be swapped in between.
   public static System.Diagnostics.Process LaunchLocked(string file,string expectedSha,string workingDirectory,string arguments,bool elevate,Action duringLock){
+   if(elevate)throw new InvalidOperationException("Elevated launches must use ProtectedLauncher.");
    using(var guard=new FileStream(file,FileMode.Open,FileAccess.Read,FileShare.Read)){
     string actual;using(var sha=SHA256.Create())actual=BitConverter.ToString(sha.ComputeHash(guard)).Replace("-","").ToLowerInvariant();
     if(actual!=expectedSha)throw new InvalidDataException("Prepared file changed. No tool was launched.");
@@ -35,6 +36,7 @@ namespace ReceiverRescue {
   // folder would let another program running in the same account plant a DLL there in advance.
   // The launch is refused if anything else is found beside the tool.
   public static System.Diagnostics.Process LaunchIsolated(string file,string expectedSha,string runRoot,string arguments,bool elevate,Action<string> beforeStart,out string runDirectory){
+   if(elevate)throw new InvalidOperationException("Elevated launches must use ProtectedLauncher.");
    byte[] data=File.ReadAllBytes(file);
    if(Hash(data)!=expectedSha)throw new InvalidDataException("Prepared file changed. No tool was launched.");
    Directory.CreateDirectory(runRoot);
